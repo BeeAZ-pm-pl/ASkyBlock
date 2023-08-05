@@ -105,7 +105,7 @@ class FormManager {
 
   public function openTop(Player $player) {
     $skyblock = ASkyBlock::getInstance()->getSkyBlock();
-    $form = new SimpleForm(function (Player $player, $data) use ($skyblock) {
+    $form = new SimpleForm(function (Player $player, $data) {
       if ($data === null) return;
     });
     $form->setTitle(Utils::getMessage("form-top-title"));
@@ -256,7 +256,7 @@ class FormManager {
     }
     $this->playerList[$player->getName()] = $list;
     $skyblock = ASkyBlock::getInstance()->getSkyBlock();
-    $form = new CustomForm(function (Player $player, $data) use ($skyblock, $text) {
+    $form = new CustomForm(function (Player $player, $data) use ($skyblock) {
       if ($data === null) return;
       $playerName = $this->playerList[$player->getName()][$data[1]];
       $this->openInfo($player, $skyblock->getInfo($playerName));
