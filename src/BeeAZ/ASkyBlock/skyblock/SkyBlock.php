@@ -37,8 +37,7 @@ class SkyBlock {
 
   public function deleteFolder(string $dirPath) {
     if (!is_dir($dirPath)) {
-      echo "Folder not found";
-      return;
+      return "Folder not found";
     }
     $dirHandle = opendir($dirPath);
     while (($file = readdir($dirHandle)) !== false) {
