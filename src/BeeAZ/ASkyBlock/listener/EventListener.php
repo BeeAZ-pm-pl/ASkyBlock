@@ -51,13 +51,13 @@ class EventListener implements Listener {
         $blockName = str_replace(' ', '_', strtolower($block->getName()));
         if ($skyblock->haveIsland($worldName)) {
             if ($worldName == $name || $skyblock->isFriends($worldName, $name) || $player->hasPermission("askyblock.bybass")) {
+                if (array_key_exists($blockName, $blocks)) {
+                    $skyblock->takePoints($worldName, $blocks[$blockName]);
+                }
                 return true;
             } else {
                 $event->cancel();
                 return true;
-            }
-            if (array_key_exists($blockName, $blocks)) {
-                $skyblock->takePoints($worldName, $blocks[$blockName]);
             }
         }
     }
