@@ -6,6 +6,6 @@ projects:
   ASkyBlock:
     path: ""
     libs:
-      - src: BeeAZ-pm-pl/BeeAZ/FormBuilderX
+      - src: BeeAZ/FormBuilderX/FormBuilderX
         version: ^1.0.0
 ...
