@@ -1,0 +1,11 @@
+items-start: 
+  - 'stone'
+  - 'diamond_pickaxe' 
+
+chest-start-position:  #The location of the chest on the island.
+  island: '256:70:252'
+
+blocks:
+  diamond_block: 5 #When the player places a block, points will be added to the island. When the player breaks a block, points will be deducted.
+
+language-file: english #Custom language plugin

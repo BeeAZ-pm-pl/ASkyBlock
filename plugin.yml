@@ -1,0 +1,39 @@
+name: ASkyBlock
+api: 5.0.0
+main: BeeAZ\ASkyBlock\ASkyBlock
+version: 0.0.1
+author: BeeAZ
+
+permissions:
+  askyblock.command:
+    default: true
+  askyblock.bybass:
+    default: op
+  askyblock.delete:
+    default: op
+  askyblock.teleport:
+    default: true
+  askyblock.create:
+    default: true
+  askyblock.top:
+    default: true
+  askyblock.info:
+    default: true
+  askyblock.settings:
+    default: true
+  askyblock.settings.setwelcome:
+    default: true
+  askyblock.settings.setwelcome:
+    default: true
+  askyblock.settings.setspawn:
+    default: true
+  askyblock.settings.friends:
+    default: true
+  askyblock.settings.ban:
+    default: true
+  askyblock.settings.lock:
+    default: true
+  askyblock.settings.kick:
+    default: true
+  askyblock.settings.pvp:
+    default: true
