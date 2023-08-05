@@ -1,6 +1,6 @@
-<center><img src='icon.png' width=150 height=150></img></center>
+<center><img src='icon.png'></img></center>
 
-# ASkyBlock Plugin for PocketMine-MP
+# A SkyBlock Plugin for PocketMine-MP
 
 ## Features
 
