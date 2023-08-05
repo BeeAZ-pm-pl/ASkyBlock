@@ -1,6 +1,6 @@
 <center><img src='icon.png'></img></center>
 
-# A SkyBlock Plugin for PocketMine-MP
+# A SkyBlock plugin for PocketMine-MP
 
 ## Features
 
@@ -10,13 +10,13 @@
 - [x] Island settings
 - [x] Island members
 
-## How to Add a World?
+## How can a world be added?
 
 1. Make sure you have an active world in PocketMine-MP.
 2. Copy the world into the `plugin_data/ASkyBlock/world` directory.
 3. Congratulations! You have successfully added the desired island. Players can now create the island you added.
 
-## How to Add Languages?
+## How can languages be added?
 
 1. Create a `.yml` file in the `plugin_data/ASkyBlock/language` directory.
 2. Copy all the language data into the file and translate it.
