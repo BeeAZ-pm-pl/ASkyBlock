@@ -8,6 +8,7 @@ use pocketmine\event\entity\EntityDamageByEntityEvent;
 use pocketmine\event\player\PlayerInteractEvent;
 use pocketmine\event\block\BlockBreakEvent;
 use pocketmine\event\block\BlockPlaceEvent;
+use pocketmine\event\entity\EntityItemPickupEvent;
 use pocketmine\player\Player;
 
 class EventListener implements Listener {
@@ -76,6 +77,21 @@ class EventListener implements Listener {
             }
             if (array_key_exists($blockName, $blocks)) {
                 $skyblock->setPoints($worldName, $blocks[$blockName]);
+            }
+        }
+    }
+
+    public function onPickup(EntityItemPickupEvent $event) {
+        $entity = $event->getEntity();
+        $skyblock = ASkyBlock::getInstance()->getSkyBlock();
+        $worldName = $entity->getWorld()->getFolderName();
+        $name = strtolower($entity->getName());
+        if ($entity instanceof Player) {
+            if ($skyblock->haveIsland($worldName)) {
+                if ($skyblock->isFriends($worldName, $name) || $entity->hasPermission("askyblock.bybass")) {
+                    return true;
+                }
+                $event->cancel();
             }
         }
     }
