@@ -85,8 +85,8 @@ class EventListener implements Listener {
         $entity = $event->getEntity();
         $skyblock = ASkyBlock::getInstance()->getSkyBlock();
         $worldName = $entity->getWorld()->getFolderName();
-        $name = strtolower($entity->getName());
         if ($entity instanceof Player) {
+            $name = strtolower($entity->getName());
             if ($skyblock->haveIsland($worldName)) {
                 if ($skyblock->isFriends($worldName, $name) || $entity->hasPermission("askyblock.bybass")) {
                     return true;
