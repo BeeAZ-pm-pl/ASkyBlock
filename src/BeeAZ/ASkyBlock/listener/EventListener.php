@@ -88,7 +88,7 @@ class EventListener implements Listener {
         if ($entity instanceof Player) {
             $name = strtolower($entity->getName());
             if ($skyblock->haveIsland($worldName)) {
-                if ($skyblock->isFriends($worldName, $name) || $entity->hasPermission("askyblock.bybass")) {
+                if ($worldName == $name || $skyblock->isFriends($worldName, $name) || $entity->hasPermission("askyblock.bybass")) {
                     return true;
                 }
                 $event->cancel();
