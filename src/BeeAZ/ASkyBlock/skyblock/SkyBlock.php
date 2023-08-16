@@ -80,6 +80,9 @@ class SkyBlock {
   public function removeWorld(string $name) {
     $skyblock = ASkyBlock::getInstance();
     $world = $skyblock->getWorldManager()->getWorldByName($name);
+    if ($world === null) {
+      return false;
+    }
     if (count($world->getPlayers()) > 0) {
       foreach ($world->getPlayers() as $player) {
         $player->teleport(Server::getInstance()->getWorldManager()->getDefaultWorld()->getSafeSpawn());
