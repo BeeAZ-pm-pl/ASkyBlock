@@ -114,6 +114,7 @@ class SkyBlock {
     $skyblock->getWorldManager()->loadWorld($islandName);
     $world = $skyblock->getWorldManager()->getWorldByName($islandName);
     $ex = explode(":", $config->getNested("chest-start-position." . $type, "0:0:0"));
+    if ($world !== null) {
     $world->loadChunk($ex[0], $ex[2]);
     $chest = $world->getTile(new Position($ex[0], $ex[1], $ex[2], $world));
     if ($chest instanceof Chest) {
@@ -126,9 +127,10 @@ class SkyBlock {
         }
         $item = StringToItemParser::getInstance()->parse($items[0])->setCount($items[1] ?? 1);
         $chest->getInventory()->addItem($item);
-      }
-    }
-  }
+       }
+     }
+   }
+ }
 
   public function delete(string $islandName) {
     $islandName = strtolower($islandName);
