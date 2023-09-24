@@ -3,6 +3,7 @@ api: 5.0.0
 main: BeeAZ\ASkyBlock\ASkyBlock
 version: 1.0.0
 author: BeeAZ
+depend: MultiWord
 
 permissions:
   askyblock.command:
