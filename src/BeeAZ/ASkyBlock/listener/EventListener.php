@@ -9,6 +9,7 @@ use pocketmine\event\player\PlayerInteractEvent;
 use pocketmine\event\block\BlockBreakEvent;
 use pocketmine\event\block\BlockPlaceEvent;
 use pocketmine\event\entity\EntityItemPickupEvent;
+use pocketmine\event\entity\EntityTrampleFarmlandEvent;
 use pocketmine\player\Player;
 
 class EventListener implements Listener {
@@ -25,6 +26,20 @@ class EventListener implements Listener {
                 }
                 $event->cancel();
             }
+        }
+    }
+
+    public function onTrample(EntityTrampleFarmlandEvent $event) {
+        $player = $event->getEntity();
+        if (!$player instanceof Player) return;
+        $name = strtolower($player->getName());
+        $skyblock = ASkyBlock::getInstance()->getSkyBlock();
+        $worldName = $player->getWorld()->getFolderName();
+        if ($skyblock->haveIsland($worldName)) {
+            if ($worldName == $name || $skyblock->isFriends($worldName, $name) || $player->hasPermission("askyblock.bybass")) {
+                return true;
+            }
+            $event->cancel();
         }
     }
 
